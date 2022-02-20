@@ -18,7 +18,7 @@ import java.text.*;
 
 public class jTPCC implements jTPCCConfig
 {
-    private static org.apache.log4j.Logger log = Logger.getLogger(jTPCC.class);
+    private static Logger log = Logger.getLogger(jTPCC.class);
     private static String               resultDirName = null;
     private static BufferedWriter       resultCSV = null;
     private static BufferedWriter       runInfoCSV = null;
@@ -130,6 +130,8 @@ public class jTPCC implements jTPCCConfig
 	    dbType = DB_ORACLE;
 	else if (iDB.equals("postgres"))
 	    dbType = DB_POSTGRES;
+	else if (iDB.equals("mysql"))
+		dbType = DB_MYSQL;
 	else
 	{
 	    log.error("unknown database type '" + iDB + "'");
@@ -544,7 +546,7 @@ public class jTPCC implements jTPCCConfig
 			    Formatter infoFmt = new Formatter(infoSB);
 			    infoFmt.format("%d,simple,%s,%s,%s,%s,%d,%d,%d,%d,1.0,1.0\n",
 					runID, JTPCCVERSION, iDB,
-					new java.sql.Timestamp(sessionStartTimestamp).toString(),
+					new Timestamp(sessionStartTimestamp).toString(),
 					iRunMins,
 					loadWarehouses,
 					numWarehouses,
