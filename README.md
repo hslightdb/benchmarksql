@@ -6,7 +6,7 @@ BenchmarkSQL runs a TPC-C like test against relational databases to compare perf
 BenchmarkSQL is Open Source, distributed under the GNU General Public License version 2.0 (GPLv2) license.
 
 This fork add support for citus, mysql and dameng database.
-
+--------
 For benchmarking dameng database, also use sample.oracle.properties properties. see dameng section.
 
 CHANGE LOG:
